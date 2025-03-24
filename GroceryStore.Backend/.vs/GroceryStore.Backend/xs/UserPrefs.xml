@@ -1,0 +1,45 @@
+﻿<Properties StartupConfiguration="{910A581D-B485-4977-A693-58F3B0C98246}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation Layer/GroceryStore.Backend.Presentation/Program.cs">
+    <Files>
+      <File FileName="Presentation Layer/GroceryStore.Backend.Presentation/appsettings.json" />
+      <File FileName="Presentation Layer/GroceryStore.Backend.Presentation/Program.cs" Line="24" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GroceryStore.Backend" expanded="True">
+            <Node name="1. Presentation Layer" expanded="True">
+              <Node name="GroceryStore.Backend.Presentation" expanded="True">
+                <Node name="Program.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="2. Business Layer" expanded="True">
+              <Node name="GroceryStore.Backend.Business" expanded="True">
+                <Node name="Managers" expanded="True" />
+                <Node name="Validations" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="3. Data Access Layer" expanded="True">
+              <Node name="GroceryStore.Backend.DAL" expanded="True">
+                <Node name="Data" expanded="True">
+                  <Node name="DbContext" expanded="True" />
+                </Node>
+                <Node name="Repository" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Presentation Layer/GroceryStore.Presentation/GroceryStore.Backend.Presentation.csproj</String>
+  </DisabledProjects>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.1._220Presentation_220Layer.GroceryStore.Backend.Presentation PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

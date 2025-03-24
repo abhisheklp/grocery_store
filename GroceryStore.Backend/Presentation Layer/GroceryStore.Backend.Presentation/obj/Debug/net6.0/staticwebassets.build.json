@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IqIZoevzfQ3xGwCf18wctwAoZBb/8RPYgM0V1ksJTJQ=",
+  "Source": "GroceryStore.Backend.Presentation",
+  "BasePath": "_content/GroceryStore.Backend.Presentation",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,15 @@
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.csproj.AssemblyReference.cache
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.AssemblyInfoInputs.cache
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.AssemblyInfo.cs
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.csproj.CoreCompileInputs.cache
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/bin/Debug/net6.0/GroceryStore.Backend.Business.deps.json
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/bin/Debug/net6.0/GroceryStore.Backend.Business.dll
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/bin/Debug/net6.0/GroceryStore.Backend.Business.pdb
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/bin/Debug/net6.0/GroceryStore.Backend.DAL.dll
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/bin/Debug/net6.0/GroceryStore.Backend.DAL.pdb
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.csproj.CopyComplete
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.dll
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/refint/GroceryStore.Backend.Business.dll
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/GroceryStore.Backend.Business.pdb
+/Users/abhishekpandey/Nagarro/Backend/GroceryStore.Backend/Business Layer/GroceryStore.Backend.Business/obj/Debug/net6.0/ref/GroceryStore.Backend.Business.dll

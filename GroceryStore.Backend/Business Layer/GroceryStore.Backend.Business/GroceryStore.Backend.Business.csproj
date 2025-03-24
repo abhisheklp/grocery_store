@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DTO\" />
+    <None Remove="Managers\" />
+    <None Remove="Validations\" />
+    <None Remove="Profiles\" />
+    <None Remove="UoW\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="Managers\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="UoW\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data Access Layer \GroceryStore.Backend.DAL\GroceryStore.Backend.DAL.csproj" />
+  </ItemGroup>
+</Project>
