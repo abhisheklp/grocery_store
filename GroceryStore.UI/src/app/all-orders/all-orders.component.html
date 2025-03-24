@@ -1,0 +1,39 @@
+<div class="container">
+    <h6 *ngIf="myOrders && myOrders.length > 0" class="display-6">My Orders</h6>
+    <div class="row mt-4" *ngFor="let order of myOrders">
+        <div *ngIf="myOrders && myOrders.length > 0" class="card order-card">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h1>Order Id - {{order.orderId}} | Order Date - {{order.orderDate | date:'dd-MMMM-yyy hh:mm a'}}</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Orderd Items</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let item of order.orderedItems.split(',')">{{ item.trim() }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Orderd Quantity</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let quantity of order.orderedQuantity.split(',')">{{ quantity.trim() }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Amount (per Pc.)</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let amount of order.amountInItem.split(',')">{{ amount.trim() }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Amount paid - &#x20b9;{{order.orderAmount}}</h4>
+                    <h1 class="display-6 text-center text-success">Your order will be deliverd soon</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!myOrders || myOrders.length === 0" class="order order-card">
+        <h1 class="display-4 text-center text-success">No orders received from you </h1>
+    </div>
+</div>

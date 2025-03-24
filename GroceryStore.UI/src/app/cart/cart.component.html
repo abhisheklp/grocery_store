@@ -1,0 +1,44 @@
+<div class="container">
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> You can view your order in my order's section.
+        <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <h6 *ngIf="orderItems && orderItems.length > 0" class="display-6">Items in your cart</h6>
+    <div *ngIf="orderItems && orderItems.length > 0" class="row mt-4">
+        <div *ngFor="let item of orderItems" class="card cart-card">
+            <div class="row mt-5">
+                <div class="col-md-2">
+                    <img routerLink="/product/productDetails/{{item.productId}}" src="assets/images/product/{{item.productImage}}" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <h1 routerLink="/product/productDetails/{{item.productId}}">{{item.productName}}</h1>
+                    <hr>
+                    <p routerLink="/product/productDetails/{{item.productId}}">{{item.productDescription}}</p>
+                    <p routerLink="/product/productDetails/{{item.productId}}">Product Quantity - {{item.productQuantity}}</p>
+                    <p routerLink="/product/productDetails/{{item.productId}}">Price - &#x20b9;&nbsp;{{item.productPrice}}</p>
+                    <p routerLink="/product/productDetails/{{item.productId}}" class="text-danger">Discount - &#x20b9;&nbsp;{{item.productDiscount}}</p>
+                </div>
+                <div class="col-md-2" style="display: inline-flex;">
+                    <div class="vr"></div>
+                    <div class="cartAlter text-center">
+                        <button class="btn btn-danger" style="margin: 10px;" (click)="deleteItem(item)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr *ngIf="orderItems && orderItems.length > 0">
+    <div *ngIf="orderItems && orderItems.length > 0" class="row">
+        <ul *ngFor="let item of orderItems">
+            <li>
+                Product Name - {{ item.productName }}, <br>
+                Price - &#x20b9; {{ item.productQuantity  * ( item.productPrice  -  item.productDiscount ) }}
+            </li>
+        </ul>
+        <p class="display-6"><strong>Total amount to pay</strong> - {{this.amountToPay}}</p>
+        <button class="btn btn-success" (click)="placeOrder()"> Place Order</button>
+    </div>
+    <div *ngIf="!orderItems || orderItems.length === 0" class="card cart-card">
+        <h1 class="display-4 text-center text-success">No items in your cart</h1>
+    </div>
+</div>

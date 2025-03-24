@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="card signup-card">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="assets/images/banner.png" alt="signup_image" class="img-fluid card-img signup-card-img">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h6 *ngIf="alert" style="color: grey;">Redirecting.... to product page in 3 sec...</h6>
+          <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> You have signed up successfully.
+            <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert"
+              aria-label="Close"></button>
+          </div>
+          <div class="brand-wrapper">
+            <img src="assets/images/logo.png" alt="logo" class="logo">Grocery Store
+          </div>
+          <p class="card-text signup-card-description">SignUp into your account</p>
+          <form [formGroup]="signupUser" (ngSubmit)="signup()">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" formControlName="fullName" class="form-control" placeholder="Full Name">
+              <div *ngIf="signupUser.get('fullName')?.invalid && signupUser.get('fullName')?.touched"
+                class="text-danger">
+                <div *ngIf="signupUser.get('fullName')?.hasError('required')">Full Name is required</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Email address">
+              <div *ngIf="signupUser.get('email')?.invalid && signupUser.get('email')?.touched" class="text-danger">
+                <div *ngIf="signupUser.get('email')?.hasError('required')">Email is required</div>
+                <div *ngIf="signupUser.get('email')?.hasError('email')" class="text-danger">Invalid email format.</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phoneNo" class="form-label">Phone No.</label>
+              <input type="text" formControlName="phoneNo" class="form-control" placeholder="Phone No.">
+              <div *ngIf="signupUser.get('phoneNo')?.invalid && signupUser.get('phoneNo')?.touched" class="text-danger">
+                <div *ngIf="signupUser.get('phoneNo')?.hasError('required')">Phone No. is required</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" formControlName="password" class="form-control" placeholder="Password">
+              <div *ngIf="signupUser.get('password')?.invalid && signupUser.get('password')?.touched"
+                class="text-danger">
+                <div *ngIf="signupUser.get('password')?.hasError('required')">Password is required</div>
+                <div *ngIf="signupUser.get('password')?.hasError('minlength')">Password should be at least 8 characters
+                  long</div>
+                <div *ngIf="signupUser.get('password')?.hasError('invalidPassword')">Password should contain at least 1
+                  special character, 1 number, and 1 alphabet</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="text" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+              <div *ngIf="signupUser.get('confirmPassword')?.invalid && signupUser.get('confirmPassword')?.touched"
+                class="text-danger">
+                <div *ngIf="signupUser.get('confirmPassword')?.hasError('required')">Confirm your password</div>
+                <div *ngIf="signupUser.hasError('passwordMismatch')">Passwords do not match</div>
+              </div>
+            </div>
+            <!-- <div class="mb-3">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="isAdmin" class="form-label">SignUp for Admin?</label>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="radio" formControlName="isAdmin" [value]="true" name="isAdmin"> Yes&nbsp;
+                    <input type="radio" formControlName="isAdmin" [value]="false" name="isAdmin"> No
+                  </div>
+                </div>
+              </div> -->
+            <button class="btn btn-block signup-btn" type="submit" [disabled]="signupUser.invalid">Sign Up</button>
+          </form>
+          <p class="signup-card-footer-text">Already have an account? <a routerLink="/login" class="text-reset">Login
+              here</a></p>
+          <nav class="signup-card-footer-nav">
+            <a href="#!">Terms of use.</a>&nbsp;&nbsp;
+            <a href="#!">Privacy policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

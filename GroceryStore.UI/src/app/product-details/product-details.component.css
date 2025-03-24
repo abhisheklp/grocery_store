@@ -1,0 +1,68 @@
+.product-card {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+    border: 1px solid greenyellow;
+    margin: 10px;
+}
+
+.alert {
+    border-radius: 50px;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.product-card-img {
+    height: 100%;
+    width: 30%;
+    margin: 20px;
+}
+
+.price-text {
+    font-size: 17px;
+}
+
+.btn {
+    font-size: 15px;
+}
+
+.mdi {
+    text-align: end;
+    font-size: 15px;
+}
+
+.review-card {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+    border: 1px solid greenyellow;
+    margin: 10px;
+}
+
+.card-body {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+    border: 1px solid greenyellow;
+    margin: 40px;
+}
+
+.btn {
+    border-radius: 22px;
+    margin: 10px;
+}
+
+.show {
+    overflow: hidden;
+    border-radius: 27.5px;
+    border: 1px solid greenyellow;
+    margin: 20px;
+}
+
+.reviews-container {
+    margin-left: 45px;
+}

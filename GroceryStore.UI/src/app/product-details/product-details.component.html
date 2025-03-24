@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="card product-card">
+        <div class="row">
+            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> You have added a product into the cart.
+                <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="col-md-12 text-center">
+                <img src="assets/images/product/{{product.productImage}}" alt="product_image" class="img-fluid product-card-img">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="display-6 text-center">{{product.productName}}</h5>
+                <p class="price-text text-center"><strong>Price</strong> - &#x20b9;&nbsp;<s>{{product.productPrice}}</s> &nbsp;{{product.productPrice - product.productDiscount}}</p>
+            </div>
+            <div class="col-md-6">
+                <div *ngIf="quantity" class="cart text-center mt-2">
+                    <div class="row" *ngIf="this.isUser && !this.isAdmin">
+                        <div class="col-sm-4 text-end">
+                            <label class="form-label" style="font-size: 20px;">Quantity</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select class="form-select" [(ngModel)]="selectedOption">
+                                <option *ngFor="let option of options" [value]="option.value">{{ option.text }}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-success" (click)="addToCart()">Add to Cart &nbsp;<i class="mdi mdi-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="quantity == false" class="cart text-center">
+                    <h6 class="text-danger">Product out of stock</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="price-text text-start text-success" style="margin-left: 245px; margin-right: 10px;"><strong>About</strong> - {{product.productDescription}}</p>
+                <p class="price-text text-start text-danger" style="margin-left: 245px;"><strong>Flat</strong> &#x20b9;{{product.productDiscount}} discount</p>
+            </div>
+        </div>
+    </div>
+    <hr style="margin: 50px;">
+    <h2 class="display-5">Product Reviews</h2><br>
+    <div class="card review-card">
+        <div class="container">
+            <div class="row">
+                <div *ngIf="reviewAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong> Your review has been added.
+                    <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h6 class="display-6 text-success">Write a review</h6>
+                            <form *ngIf="!this.isAdmin" [formGroup]="addNewReview" (ngSubmit)="addReview()">
+                                <div class="mb-3">
+                                    <label for="reviewText" class="form-label">Review</label>
+                                    <input type="text" formControlName="reviewText" class="form-control" placeholder="Review">
+                                    <div *ngIf="addNewReview.get('reviewText')?.invalid && addNewReview.get('reviewText')?.touched" class="text-danger">
+                                      <div *ngIf="addNewReview.get('reviewText')?.hasError('required')">Review is required</div>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="reviewRating" class="form-label">Rate out of 5</label>
+                                    <input type="number" formControlName="reviewRating" class="form-control" placeholder="Rating" max="5">
+                                    <div *ngIf="addNewReview.get('reviewRating')?.invalid && addNewReview.get('reviewRating')?.touched" class="text-danger">
+                                      <div *ngIf="addNewReview.get('reviewRating')?.hasError('required')">Rating is required</div>
+                                      <div *ngIf="addNewReview.get('reviewRating')?.hasError('min')">Minimum rating value is 0</div>
+                                      <div *ngIf="addNewReview.get('reviewRating')?.hasError('max')">Maximum rating value is 5</div>
+                                    </div>
+                                  </div>
+                                  <button *ngIf="isUser" type="submit" class="btn btn-success" [disabled]="addNewReview.invalid">Post Review</button>
+                                  <h5 *ngIf="!isUser" class="text-danger">You must login to write a review</h5>
+                            </form>
+                            <div *ngIf="this.isAdmin" class="show">
+                                <h1 class="display-6 text-center text-success">Admin can't give reviews</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h6 class="display-6 text-success">Older reviews</h6>
+                            <div class="review-body reviews-container" style="overflow-y:scroll; max-height: 228px; width: 100%;">
+                                <div *ngFor="let review of reviews" class="toast show">
+                                    <div class="toast-header">
+                                        <strong class="me-auto">{{review.userEmail}}</strong>
+                                        <small>{{review.reviewDate | date:'dd-MMMM-yyy'}}</small>
+                                    </div>
+                                    <div class="toast-body">
+                                        {{review.reviewText}}<br>
+                                        <hr>
+                                        <p class="text-center"><strong>Rating</strong> - {{review.reviewRating}} / 5</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="!reviews || reviews.length === 0" class="show">
+                                    <h1 class="display-6 text-center text-success">No reviews yet</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

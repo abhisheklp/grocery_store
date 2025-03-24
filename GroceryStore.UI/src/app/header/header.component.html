@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar">
+                    <div class="logo">
+                        <a routerLink=""><img src="assets/images/logo.png" style="height: 50px; width: 60px;"alt="logo">Grocery Store</a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a routerLink="">Home</a></li>
+                            <li><a routerLink="product">Products</a></li>
+                            <li><a *ngIf="this.isUser && !this.isAdmin" routerLink="myOrders">My Orders</a></li>
+                            <li><a *ngIf="this.isUser && !this.isAdmin" routerLink="cart"><img src="assets/images/cart.png" style="width: 23px; height: 23px;" alt="cart_image"></a></li>
+                            <li><a routerLink="about">About</a></li>
+                            <li><a routerLink="contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-auth">
+                        <h6 *ngIf="this.isUser" class="text-success" style="margin-top: 9px; margin-right: 20px;">{{this.service.loginResult.userName}}</h6>
+                        <button *ngIf="this.isUser" routerLink="" (click)="logOut()" class="btn btn-outline-warning">Log Out</button>
+                        <button *ngIf="!this.isUser" routerLink="login" class="btn btn-success" style="border: 2px solid green;">Login</button>&nbsp;
+                        <button *ngIf="!this.isUser" routerLink="signup" class="btn btn-outline-success">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

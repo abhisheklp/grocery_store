@@ -1,0 +1,8 @@
+.order-card {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+    border: 1px solid greenyellow;
+    margin: 10px;
+}

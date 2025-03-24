@@ -1,0 +1,15 @@
+.brand-wrapper {
+    margin-bottom: 19px;
+    margin-left: 35px;
+    cursor: pointer;
+}
+
+.brand-wrapper .logo {
+    height: 37px;
+    cursor: pointer;
+}
+
+.app {
+    width: 80%;
+    margin-left: 10px;
+}

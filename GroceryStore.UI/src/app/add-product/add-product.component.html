@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <h1 class="display-4">Add product</h1>
+    </div>
+    <div class="card add-product-card">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/images/banner.png" alt="banner_image" class="img-fluid card-img add-product-card-img">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h6 *ngIf="alert" style="color: grey;">Redirecting.... to product page in 3 sec...</h6>
+                    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success!</strong> You have added a product.
+                        <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="brand-wrapper text-center">
+                        <img src="assets/images/logo.png" alt="logo" class="logo">Grocery Store
+                    </div>
+                    <form [formGroup]="newProduct" (ngSubmit)="addProductGrocery()" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" formControlName="productName" class="form-control" placeholder="Product Name">
+                            <div *ngIf="newProduct.get('productName')?.invalid && newProduct.get('productName')?.touched" class="text-danger">
+                                <div *ngIf="newProduct.get('productName')?.hasError('required')">Product Name is required</div>
+                                <div *ngIf="newProduct.get('productName')?.hasError('maxlength')">Product Name cannot exceed 100 characters</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label">Product Description</label>
+                            <input type="text" formControlName="productDescription" class="form-control" placeholder="Product Description">
+                            <div *ngIf="newProduct.get('productDescription')?.invalid && newProduct.get('productDescription')?.touched" class="text-danger">
+                                <div *ngIf="newProduct.get('productDescription')?.hasError('required')">Product Description is required</div>
+                                <div *ngIf="newProduct.get('productDescription')?.hasError('maxlength')">Product Description cannot exceed 255 characters</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productQuantity" class="form-label">Quantity</label>
+                            <input type="number" formControlName="productQuantity" class="form-control" placeholder="Quantity">
+                            <div *ngIf="newProduct.get('productQuantity')?.invalid && newProduct.get('productQuantity')?.touched" class="text-danger">
+                                <div *ngIf="newProduct.get('productQuantity')?.hasError('required')">Quantity is required</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Price</label>
+                            <input type="number" formControlName="productPrice" class="form-control" placeholder="Price">
+                            <div *ngIf="newProduct.get('productPrice')?.invalid && newProduct.get('productPrice')?.touched" class="text-danger">
+                                <div *ngIf="newProduct.get('productPrice')?.hasError('required')">Price is required</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDiscount" class="form-label">Discount in product</label>
+                            <input type="number" formControlName="productDiscount" class="form-control" placeholder="discount">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productSpecification" class="form-label">Specification</label>
+                            <input type="text" formControlName="productSpecification" class="form-control" placeholder="specification">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productImage" class="form-label">Product Image</label>
+                            <input type="file" class="form-control" id="productImage" formControlName="productImage" (change)="onUploadImage($event)">
+                            <div *ngIf="newProduct.get('productImage')?.invalid && newProduct.get('productImage')?.touched"class="text-danger">
+                                <div *ngIf="newProduct.get('productImage')?.hasError('required')">Product Image is required</div>
+                                <div *ngIf="newProduct.get('productImage')?.hasError('pattern')">Image must be in JPG or PNG format</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoryEntityId" class="form-label">Product Category</label> &nbsp;&nbsp;
+                            <select class="form-select category" formControlName="categoryEntityId">
+                                <option value="">Select Category</option>
+                                <option class="text-dark" value="{{category.categoryId}}" *ngFor="let category of categories">{{category.categoryName}}</option>
+                            </select>
+                            <div *ngIf="newProduct.get('categoryEntityId')?.invalid && newProduct.get('categoryEntityId')?.touched" class="text-danger">
+                                <div *ngIf="newProduct.get('categoryEntityId')?.hasError('required')">Product Category is required</div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-block add-product-btn" type="submit" [disabled]="newProduct.invalid">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
